@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tetris</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+
+    <div id="left-panel">
+      <div class="panel-box">
+        <div class="panel-label">HOLD</div>
+        <canvas id="hold-canvas" width="120" height="80"></canvas>
+      </div>
+      <div class="panel-box stats-box">
+        <div class="stat-item">
+          <div class="stat-label">SCORE</div>
+          <div class="stat-value" id="score">0</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">BEST</div>
+          <div class="stat-value" id="best">0</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">LEVEL</div>
+          <div class="stat-value" id="level">1</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">LINES</div>
+          <div class="stat-value" id="lines">0</div>
+        </div>
+      </div>
+      <div class="panel-box controls-box">
+        <div class="panel-label">CONTROLS</div>
+        <div class="ctrl-row"><span class="key">← →</span><span class="ctrl-desc">Move</span></div>
+        <div class="ctrl-row"><span class="key">↓</span><span class="ctrl-desc">Soft drop</span></div>
+        <div class="ctrl-row"><span class="key">Space</span><span class="ctrl-desc">Hard drop</span></div>
+        <div class="ctrl-row"><span class="key">↑ / X</span><span class="ctrl-desc">Rotate CW</span></div>
+        <div class="ctrl-row"><span class="key">Z</span><span class="ctrl-desc">Rotate CCW</span></div>
+        <div class="ctrl-row"><span class="key">C / ⇧</span><span class="ctrl-desc">Hold</span></div>
+        <div class="ctrl-row"><span class="key">P</span><span class="ctrl-desc">Pause</span></div>
+      </div>
+    </div>
+
+    <div id="board-wrapper">
+      <canvas id="board-canvas" width="300" height="600"></canvas>
+      <div id="overlay">
+        <div id="overlay-content">
+          <div id="overlay-title">TETRIS</div>
+          <div id="overlay-sub"></div>
+          <div id="overlay-score-display"></div>
+          <div id="overlay-prompt">Press <strong>ENTER</strong> or <strong>SPACE</strong> to Start</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="right-panel">
+      <div class="panel-box">
+        <div class="panel-label">NEXT</div>
+        <canvas id="next-canvas" width="120" height="400"></canvas>
+      </div>
+    </div>
+
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
