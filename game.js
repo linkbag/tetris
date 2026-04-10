@@ -393,9 +393,14 @@ class TetrisGame {
       this.lockTimer = 0;
       this.gravTimer += dt;
       const g = gravityAt(this.level);
-      if (this.gravTimer >= g) {
+      while (this.gravTimer >= g) {
         this.gravTimer -= g;
-        this.current.row++;
+        if (this._valid(this.current, 1, 0)) {
+          this.current.row++;
+        } else {
+          this.gravTimer = 0; // drain timer — piece just hit ground
+          break;
+        }
       }
     }
   }
